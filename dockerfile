@@ -1,0 +1,9 @@
+FROM python:alpine
+
+WORKDIR usr/src/app
+
+COPY m3.py .
+
+ARG DOWNLOAD_URL
+ENV DOWNLOAD_URL ${DOWNLOAD_URL}
+CMD python m3.py ${DOWNLOAD_URL}
